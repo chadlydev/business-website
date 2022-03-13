@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:wght@100;300;400;700;900&display=swap');
+
+/* Table of Content */
+/* --------------------------------------------- 1. Global Styles ------------------------------------------------ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+:root {
+  --purple: #5722cd;
+  --blue: #4845e4;
+  --pink: #ed4385;
+  --black: #0c0c0c;
+  --light-purple: #f2f0ff;
+  --light-grey: #f3f6f9;
+  --grey: #7a7a7a;
+}
+
+/* --------------------------------------------- 2. Typography --------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 44px;
+  color: white;
+}
+
+p,
+li,
+a,
+label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* --------------------------------------------- 3. Layout ------------------------------------------------------- */
+
+.container {
+  width: 50vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  background-color: var(--pink);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 20px 35px;
+  border: none;
+  border-radius: 3em;
+  color: white;
+  box-shadow: 0px 3px 15px rgb(0, 0, 0, 0.5);
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.line {
+  border-bottom: 50px solid white;
+  border-right: 100vw solid transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.line-work {
+  border-top: 50px solid white;
+  border-left: 100vw solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.bg-light {
+  background: var(--light-grey);
+  padding: 250px 0 150px 0;
+  position: relative;
+}
+
+.bg-text::before {
+  font-family: 'Roboto', sans-serif;
+  font-size: 550px;
+  font-weight: bold;
+  letter-spacing: -20px;
+  position: absolute;
+  left: calc(50% - 550px);
+  z-index: -1;
+}
+
+/* --------------------------------------------- 4. Areas -------------------------------------------------------- */
+
+/* --------------------------------------------- 4.1 Navbar ------------------------------------------------------ */
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 1;
+  flex-grow: 0;
+  max-width: 90vw;
+}
+
+nav a {
+  display: inline-block;
+  list-style: none;
+  margin: 30px 60px;
+  color: white;
+}
+
+nav a:last-child,
+nav a:first-child {
+  margin: auto 0;
+}
+
+/* --------------------------------------------- 4.2 Banner ------------------------------------------------------ */
+
+header {
+  background: linear-gradient(120deg, rgba(72, 69, 228, 1) 30%, rgba(87, 34, 205, 1) 70%);
+  position: relative;
+  z-index: 0;
+}
+
+header .banner {
+  margin: 80px auto;
+  padding-bottom: 200px;
+}
+
+header #banner-text {
+  font-size: 28px;
+  color: white;
+  margin: 30px 0;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  background-image: url(../assets/noise-texture.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.squibble {
+  position: absolute;
+  left: calc(50% - 40px);
+  bottom: 0;
+  z-index: -1;
+}
+
+/* --------------------------------------------- 4.3 Main Text --------------------------------------------------- */
+
+#main-text {
+  margin-top: 200px;
+  position: relative;
+}
+
+#main-text h2 {
+  font-size: 32px;
+  margin: 30px auto;
+  color: var(--purple);
+}
+
+#main-text p,
+#main-text a {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 100px auto;
+}
+
+#main-text a {
+  color: var(--purple);
+}
+
+#hello {
+  position: relative;
+}
+
+#hello::before {
+  content: 'hello';
+  color: var(--light-purple);
+  top: -65%;
+  opacity: 0.6;
+}
+
+/* --------------------------------------------- 4.4 Work ------------------------------------------------------- */
+
+#work {
+  position: relative;
+  z-index: 0;
+}
+
+#work::before {
+  content: 'work';
+  color: white;
+  top: -2%;
+  z-index: -1;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto;
+}
+
+.article-container {
+  width: 90vw;
+  margin: auto;
+}
+
+.work-text h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  margin-top: 100px;
+}
+
+.work-text p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.work-text {
+  margin: 0 5vw;
+  flex-basis: 25%;
+}
+
+.work-text a {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--purple);
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.work-text a::after {
+  content: '';
+  width: 15px;
+  height: 1px;
+  background-color: var(--purple);
+  position: absolute;
+  margin-left: 10px;
+  top: 50%;
+  transition: 0.2s;
+}
+
+.work-text a:hover::after {
+  width: 45px;
+  transition: 0.2s;
+}
+
+.squibble-2 {
+  margin-bottom: 40px;
+}
+
+.invert {
+  flex-direction: row-reverse;
+}
+
+.work-img {
+  box-shadow: 0px 15px 40px -2px rgb(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------- 4.5 Services --------------------------------------------------- */
+
+#services::before {
+  content: 'services';
+  color: var(--light-purple);
+  font-size: 300px;
+  letter-spacing: -5px;
+  top: -30%;
+  left: calc(50% - 550px);
+}
+
+#services {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 250px auto 150px auto;
+}
+
+#services article {
+  background-color: white;
+  flex: calc((80vw / 3) - 50px);
+  border: 1px solid var(--purple);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50px;
+  box-shadow: 0px 15px 20px -2px rgb(0, 0, 0, 0.1);
+}
+
+#services h2 {
+  color: var(--purple);
+  margin: 10px 0;
+}
+
+#services p {
+  font-size: 16px;
+  color: var(--grey);
+}
+
+/* --------------------------------------------- 4.6 Form ------------------------------------------------------- */
+
+#form {
+  padding: 120px 0 60px 0;
+  background: linear-gradient(120deg, rgba(72, 69, 228, 1) 30%, rgba(87, 34, 205, 1) 70%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+#form form {
+  display: flex;
+  flex-direction: column;
+}
+
+#form h2,
+#form p,
+#form label {
+  color: white;
+}
+
+#form h2 {
+  font-size: 42px;
+  margin: 30px auto;
+}
+
+#form p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#form label {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#form input {
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding: 15px;
+  border-radius: 3px;
+  border: none;
+}
+
+#form textarea {
+  padding: 20px;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 3px;
+  border: none;
+}
+
+#form button {
+  width: 10%;
+  margin: auto;
+}
+
+/* --------------------------------------------- 4.7 Footer ----------------------------------------------------- */
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 13px;
+}
+
+/* --------------------------------------------- 4.8 Media Queries ---------------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+  /* ---------- 2. Typography ---------- */
+  h1 {
+    font-size: 26px;
+  }
+
+  p,
+  li,
+  a,
+  label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* ------------- 3. Layout -------------- */
+
+  .container {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 3em;
+    color: white;
+    box-shadow: 0px 3px 15px rgb(0, 0, 0, 0.5);
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+
+  .line {
+    border-bottom: 10px solid white;
+    border-right: 100vw solid transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .line-work {
+    border-top: 10px solid white;
+    border-left: 100vw solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .bg-text::before {
+    font-family: 'Roboto', sans-serif;
+    font-size: 150px;
+    font-weight: bold;
+    letter-spacing: -10px;
+    position: absolute;
+    left: calc(50% - 150px);
+    z-index: -1;
+  }
+
+  .bg-light {
+    background: var(--light-grey);
+    padding: 140px 0 50px 0;
+    position: relative;
+  }
+
+  /* ------------- 4.1 Navbar ------------- */
+
+  nav {
+    justify-content: space-between;
+    margin: auto;
+    max-width: 80vw;
+    padding: 0;
+  }
+
+  nav a {
+    margin: 30px;
+  }
+
+  /* ------------- 4.2 Banner ------------- */
+  header .banner {
+    margin: 60px auto;
+    padding-bottom: 130px;
+  }
+
+  header #banner-text {
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin: 30px 0;
+    position: relative;
+  }
+
+  .squibble {
+    position: absolute;
+    left: calc(50% - 30px);
+    bottom: 0;
+    width: 60px;
+    bottom: -20px;
+    z-index: -1;
+  }
+
+  /* ------------- 4.3 Main Text ---------- */
+  #hello::before {
+    top: -25%;
+  }
+
+  #main-text {
+    margin-top: 150px;
+  }
+
+  #main-text h2 {
+    font-size: 20px;
+    margin: 20px auto;
+    color: var(--purple);
+  }
+
+  #main-text p,
+  #main-text a {
+    font-size: 16px;
+    margin: 60px auto 100px auto;
+  }
+
+  /* ------------- 4.4 Work --------------- */
+  #work::before {
+    top: 2%;
+  }
+
+  #work .work-img {
+    width: 100%;
+    order: -1;
+  }
+
+  #work article {
+    width: 90vw;
+    margin: 40px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .work-text {
+    margin: 0;
+  }
+
+  .work-text h2 {
+    font-size: 26px;
+    margin-top: 30px;
+  }
+
+  .work-text p {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .work-text a {
+    font-size: 12px;
+  }
+
+  /* ------------- 4.5 Services ----------- */
+
+  #services {
+    margin: 150px auto 100px auto;
+    flex-direction: column;
+  }
+
+  #services::before {
+    font-size: 95px;
+    top: -3.2%;
+    left: calc(50% - 160px);
+  }
+
+  #services article {
+    padding: 30px;
+  }
+
+  #services h2 {
+    font-size: 18px;
+  }
+
+  #services p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  #services img {
+    width: 60px;
+  }
+
+  /* ------------- 4.6 Form --------------- */
+
+  #form {
+    padding: 80px 0 60px 0;
+  }
+
+  #form h2,
+  #form p,
+  #form label {
+    color: white;
+  }
+
+  #form h2 {
+    font-size: 28px;
+    margin: 20px auto;
+  }
+
+  #form p {
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+
+  #form label {
+    font-size: 14px;
+  }
+
+  #form button {
+    width: 40%;
+    margin: auto;
+  }
+
+  /* ------------- 4.7 Footer ------------- */
+  footer p {
+    font-weight: 200;
+  }
+}
